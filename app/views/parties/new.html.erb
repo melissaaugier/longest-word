@@ -1,0 +1,15 @@
+<div class="text-center">
+  <h1>Partie numéro 1</h1>
+
+  <div class="d-flex justify-content-center">
+    <% @ten_letters_list.each do |letter| %>
+      <div class="p-4 bg-primary text-white mx-3"><%= letter %></div>
+    <% end %>
+  </div>
+<br>
+  <%= simple_form_for [ @game, @party ] do |f| %>
+    <%= f.hidden_field :ten_letters_list, value: @ten_letters_list %>
+    <%= f.input :word %>
+    <%= f.submit "Valider la réponse", class: "btn btn-primary" %>
+  <% end %>
+</div>

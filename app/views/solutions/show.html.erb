@@ -1,0 +1,29 @@
+<div class="flex justify-content-center text-center my-3">
+      <p>Votre grille était : </p>
+
+  <div class="d-flex justify-content-center">
+    <% @party.ten_letters_list.split().each do |letter| %>
+      <div class="p-4 bg-primary text-white mx-3"><%= letter %></div>
+    <% end %>
+  </div>
+
+
+
+  <div class="my-3">
+    <h1>Vous avez trouvé un mot !</h1>
+    <h2>Votre mot: <%= @party.word %> </h2>
+    <p>Votre score: <%= @party.word.size %> </p>
+  </div>
+
+  <div>
+    <h2>Voici la liste des solutions proposées:</h2>
+    <ol>
+      <% @solutions.each do |solution| %>
+        <li><%= solution.word %></li>
+      <% end %>
+    </ol>
+  </div>
+
+  <%= link_to 'Accueil', root_path, class: "btn btn-primary" %>
+
+</div>

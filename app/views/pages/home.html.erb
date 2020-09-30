@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Bonjour <%= current_user.email %>, </h1>
+<p>Voulez-vous commencer une nouvelle partie ?</p>
+
+<div class="container">
+  <div class="form-actions">
+    <%= link_to 'Nouvelle partie', games_path, method: :post, class: 'btn btn-primary stretched-link'  %>
+  </div>
+</div>
