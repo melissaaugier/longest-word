@@ -3,13 +3,21 @@
 
   <div class="d-flex justify-content-center">
     <% @ten_letters_list.each do |letter| %>
-      <div class="p-4 bg-primary text-white mx-3"><%= letter %></div>
+      <div class="p-4 bg-primary text-white mx-3"><%= letter.upcase %></div>
     <% end %>
   </div>
+
 <br>
   <%= simple_form_for [ @game, @party ] do |f| %>
     <%= f.hidden_field :ten_letters_list, value: @ten_letters_list %>
     <%= f.input :word %>
     <%= f.submit "Valider la réponse", class: "btn btn-primary" %>
   <% end %>
+
+<% if !@error.nil? %>
+  <div class="alert alert-danger" role="alert">
+      <%= @error %>
+  </div>
+<% end %>
+
 </div>

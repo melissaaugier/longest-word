@@ -22,6 +22,7 @@ class PartiesController < ApplicationController
       redirect_to game_party_solution_path(id: @game, party_id: @party)
     else
       @ten_letters_list = params[:party][:ten_letters_list].split
+      @error = "Votre mot n'existe pas ou n'est pas français"
       render :new
     end
   end
